@@ -1,0 +1,14 @@
+node_modules/
+.venv/
+__pycache__/
+*.pyc
+backend/data/
+backend/models/*.pt
+backend/models/*_metrics.json
+.env
+
+backend/models/backups/
+backend/models/xray_transfer_run/
+backend/models/xray_prototype_run/
+
+backend/models/audio_run/

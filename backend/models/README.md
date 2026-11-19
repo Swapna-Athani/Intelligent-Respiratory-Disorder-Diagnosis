@@ -1,0 +1,3 @@
+The installed xray.pt is a trained exploratory ResNet18 transfer model. See ../../XRAY_PROTOTYPE.md and xray_metrics.json for measured image-level results and limitations. Previous checkpoints are backed up under backups/. The audio model is separate. The strict patient-disjoint training workflow remains train.py; train_xray_transfer.py uses explicitly documented image-level evaluation.
+
+The audio.pt checkpoint now supports Normal Breathing, COPD and Pneumonia-related respiratory pattern, with patient-disjoint same-source evaluation. Asthma is unsupported. See ../../AUDIO_MODEL.md and audio_metrics.json; recording test accuracy is only 57.1%, so the audio model is an unreliable demonstration prototype.

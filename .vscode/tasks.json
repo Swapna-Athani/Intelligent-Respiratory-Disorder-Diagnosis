@@ -1,0 +1,112 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Create backend Python 3.10 environment",
+			"type": "shell",
+			"command": "py",
+			"args": [
+				"-3.10",
+				"-m",
+				"venv",
+				"backend\\.venv"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Locate Python installations",
+			"type": "shell",
+			"command": "where.exe",
+			"args": [
+				"python.exe"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Recreate backend with Python 3.10",
+			"type": "shell",
+			"command": "C:\\Users\\shris\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
+			"args": [
+				"-m",
+				"venv",
+				"backend\\.venv"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Verify backend Python 3.10",
+			"type": "shell",
+			"command": "backend\\.venv\\Scripts\\python.exe",
+			"args": [
+				"-c",
+				"import sys; print(sys.executable); print(sys.version)"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Install backend dependencies",
+			"type": "shell",
+			"command": "backend\\.venv\\Scripts\\python.exe",
+			"args": [
+				"-m",
+				"pip",
+				"install",
+				"-r",
+				"backend\\requirements.txt"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Verify backend imports",
+			"type": "shell",
+			"command": "backend\\.venv\\Scripts\\python.exe",
+			"args": [
+				"-c",
+				"import app; print('Backend initialized:', app.app.name)"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check backend module",
+			"type": "shell",
+			"command": "backend\\.venv\\Scripts\\python.exe",
+			"args": [
+				"-c",
+				"import app; print(app.app.name)"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check backend module from root",
+			"type": "shell",
+			"command": "backend\\.venv\\Scripts\\python.exe",
+			"args": [
+				"-c",
+				"import sys;sys.path.insert(0,\"backend\");import app;print(app.app.name)"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check backend module in directory",
+			"type": "shell",
+			"command": "Set-Location backend; .\\.venv\\Scripts\\python.exe -c \"import app; print(app.app.name)\"",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Launch backend smoke check",
+			"type": "shell",
+			"command": "Set-Location backend; .\\.venv\\Scripts\\python.exe app.py",
+			"isBackground": true,
+			"problemMatcher": []
+		}
+	]
+}
